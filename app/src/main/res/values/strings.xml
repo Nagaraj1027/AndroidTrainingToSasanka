@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">AndroidTrainingToSasanka</string>
+
+    <string name="btn1_name">Button1</string>
+    <string name="btn2_name">Button2</string>
+    <string name="btn3_name">Button3</string>
+
 </resources>
