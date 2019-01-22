@@ -4,13 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activitylifecycle.FirstActivity">
+
 
     <TextView
         android:id="@+id/tv1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Home Screen" />
+        android:text="First Screen" />
 
     <Button
         android:id="@+id/btn1"
@@ -20,6 +21,6 @@
         android:layout_centerInParent="true"
         android:layout_below="@+id/tv1"
         android:padding="20dp"
-        android:text="GOTO ACTIVITY LIFECYCLE" />
+        android:text="GOTO SECOND ACIVITY" />
 
 </RelativeLayout>
