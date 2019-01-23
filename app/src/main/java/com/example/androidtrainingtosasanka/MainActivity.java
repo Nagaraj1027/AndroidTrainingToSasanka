@@ -11,7 +11,7 @@ import android.widget.ListView;
 import com.example.androidtrainingtosasanka.activitylifecycle.FirstActivity;
 import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     Button btn1, btn2, btn3;
 
@@ -24,27 +24,20 @@ public class MainActivity extends AppCompatActivity {
         btn2 = (Button) findViewById(R.id.btn2);
         btn3 = (Button) findViewById(R.id.btn3);
 
+        btn1.setOnClickListener(this);
+        btn2.setOnClickListener(this);
+        btn3.setOnClickListener(this);
+    }
 
-        btn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoActivityLifeCycle();
-            }
-        });
+    void gotoActivityLifeCycle() {
+        Intent to_first = new Intent(MainActivity.this, FirstActivity.class);
+        startActivity(to_first);
+    }
 
-        btn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoExplicitIntent();
-            }
-        });
-
-        btn3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                gotoImplicitIntent();
-            }
-        });
+    void gotoExplicitIntent() {
+        Intent to_explicit = new Intent(MainActivity.this, ExplicitIntentActivity.class);
+        to_explicit.putExtra("key", "Android");
+        startActivity(to_explicit);
     }
 
     void gotoImplicitIntent() {
@@ -53,15 +46,25 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    void gotoExplicitIntent() {
-        Intent to_explicit = new Intent(MainActivity.this, ExplicitIntentActivity.class);
-        to_explicit.putExtra("key", "Android");
-        startActivity(to_explicit);
 
-    }
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
 
-    void gotoActivityLifeCycle() {
-        Intent to_first = new Intent(MainActivity.this, FirstActivity.class);
-        startActivity(to_first);
+            case R.id.btn1:
+                gotoActivityLifeCycle();
+                break;
+
+            case R.id.btn2:
+                gotoExplicitIntent();
+                break;
+
+            case R.id.btn3:
+                gotoImplicitIntent();
+                break;
+
+        }
+
+
     }
 }
