@@ -30,9 +30,22 @@ public class ApplicationClass extends Application {
         editor.commit();
     }
 
-    static String getUsername() {
+   public static String getUsernameFromSp() {
         String username = sharedPreferences.getString("keyname", "");
 
         return username;
     }
+
+    public static void putPasswordIntoSp(String password) {
+        editor.putString("keypassword", password);
+        editor.commit();
+    }
+
+  public   static String getPasswordFromSp() {
+        String password = sharedPreferences.getString("keypassword", "");
+
+        return password;
+    }
+
 }
+
