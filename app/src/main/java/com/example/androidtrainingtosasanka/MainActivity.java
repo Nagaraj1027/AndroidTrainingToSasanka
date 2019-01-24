@@ -10,6 +10,7 @@ import android.widget.Button;
 import android.widget.ListView;
 
 import com.example.androidtrainingtosasanka.activitylifecycle.FirstActivity;
+import com.example.androidtrainingtosasanka.appclass.AppConstants;
 import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     void gotoExplicitIntent() {
         Intent to_explicit = new Intent(MainActivity.this, ExplicitIntentActivity.class);
-        to_explicit.putExtra("key", "Android");
+        to_explicit.putExtra(AppConstants.KEY_USERNAME, "Android");
         startActivity(to_explicit);
     }
 
