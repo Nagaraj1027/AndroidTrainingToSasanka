@@ -17,7 +17,7 @@ import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
     ListView lv;
-    Button btn1, btn2, btn3, btn4, btn5;
+    Button btn1, btn2, btn3, btnCall, btnClear;
     EditText text1;
     String number;
 
@@ -29,16 +29,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn1 = (Button) findViewById(R.id.btn1);
         btn2 = (Button) findViewById(R.id.btn2);
         btn3 = (Button) findViewById(R.id.btn3);
-        btn4 = (Button) findViewById(R.id.btn4);
-        btn5 = (Button) findViewById(R.id.btn5);
+        btnCall = (Button) findViewById(R.id.btnCall);
+        btnClear = (Button) findViewById(R.id.btnClear);
 
         text1 = (EditText) findViewById(R.id.editText1);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
-        btn4.setOnClickListener(this);
-        btn5.setOnClickListener(this);
+        btnCall.setOnClickListener(this);
+        btnClear.setOnClickListener(this);
 
     }
 
@@ -85,11 +85,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 gotoImplicitIntent();
                 break;
 
-            case R.id.btn4:
+            case R.id.btnCall:
                 gotoCall();
                 break;
 
-            case R.id.btn5:
+            case R.id.btnClear:
                 clearPreferences();
                 break;
 

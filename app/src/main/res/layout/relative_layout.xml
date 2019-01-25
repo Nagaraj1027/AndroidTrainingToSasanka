@@ -56,7 +56,7 @@
         android:background= "@color/colorGray"/>
 
     <Button
-        android:id="@+id/btn4"
+        android:id="@+id/btnCall"
         style="@style/btn_stye"
         android:background="@color/colorPrimary"
         android:textColor="#ffffff"
@@ -67,11 +67,11 @@
         android:text="MAKE THE CALL" />
 
     <Button
-        android:id="@+id/btn5"
+        android:id="@+id/btnClear"
         style="@style/btn_stye"
         android:textColor="#ffffff"
         android:background="@color/colorPrimary"
-        android:layout_below="@id/btn4"
+        android:layout_below="@id/btnCall"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
         android:padding="20dp"
