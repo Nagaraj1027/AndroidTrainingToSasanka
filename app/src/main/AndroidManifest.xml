@@ -17,6 +17,7 @@
         <activity android:name=".activitylifecycle.SecondActivity" />
         <activity android:name=".activitylifecycle.FirstActivity" />
         <activity android:name=".MainActivity" />
+        <activity android:name=".dynamicfragments.DynamicFragmntsActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
