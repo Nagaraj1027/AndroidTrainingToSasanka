@@ -11,6 +11,7 @@ import com.example.androidtrainingtosasanka.MainActivity;
 import com.example.androidtrainingtosasanka.R;
 import com.example.androidtrainingtosasanka.activitylifecycle.FirstActivity;
 import com.example.androidtrainingtosasanka.activitylifecycle.SecondActivity;
+import com.example.androidtrainingtosasanka.appclass.AppConstants;
 
 public class ExplicitIntentActivity extends AppCompatActivity {
     Button btn1;
@@ -22,8 +23,8 @@ public class ExplicitIntentActivity extends AppCompatActivity {
 
         btn1 = (Button) findViewById(R.id.btn1);
 
-        String s = getIntent().getStringExtra("key");
-        Log.e("Received value is", s+"");
+        String s = getIntent().getStringExtra(AppConstants.KEY_USERNAME);
+        Log.e("Received value is", s + "");
 
 
         btn1.setOnClickListener(new View.OnClickListener() {
