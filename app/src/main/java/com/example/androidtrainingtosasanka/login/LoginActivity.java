@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 
 import com.example.androidtrainingtosasanka.MainActivity;
 import com.example.androidtrainingtosasanka.R;
@@ -16,6 +17,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText userName, passWord;
     Button btnLogin;
+    Switch switch1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,29 +27,43 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = (Button) findViewById(R.id.btnLogin);
         userName = (EditText) findViewById(R.id.userName);
         passWord = (EditText) findViewById(R.id.passWord);
+        switch1 =  (Switch) findViewById(R.id.switch1);
 
 
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        if (ApplicationClass.getRememberMe()){
+            gotoMainActivity();
+        }
 
-                String username = userName.getText().toString();
-                String password = passWord.getText().toString();
+        else {
+            btnLogin.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                if (!(username.isEmpty()) && !(password.isEmpty())) {
+                    String username = userName.getText().toString();
+                    String password = passWord.getText().toString();
+                    Boolean switchState = switch1.isChecked();
 
-                    ApplicationClass.putUserNameIntoSp(username);
-                    ApplicationClass.putPasswordIntoSp(password);
+                    if (!(username.isEmpty()) && !(password.isEmpty())) {
 
-                    Log.e("username from SP", ApplicationClass.getUsernameFromSp());
-                    Log.e("password from SP", ApplicationClass.getPasswordFromSp());
+                        ApplicationClass.putUserNameIntoSp(username);
+                        ApplicationClass.putPasswordIntoSp(password);
+                        ApplicationClass.setRememberMe(switchState);
 
-                    Intent to_home = new Intent(LoginActivity.this, MainActivity.class);
-                    startActivity(to_home);
-
+                        Log.e("username from SP", ApplicationClass.getUsernameFromSp());
+                        Log.e("password from SP", ApplicationClass.getPasswordFromSp());
+                        Log.e("remember me from SP", ApplicationClass.getRememberMe().toString());
+                        gotoMainActivity();
+                    }
                 }
-            }
-        });
+            });
+        }
 
     }
+
+
+    void gotoMainActivity() {
+        Intent to_home = new Intent(LoginActivity.this, MainActivity.class);
+        startActivity(to_home);
+    }
+
 }

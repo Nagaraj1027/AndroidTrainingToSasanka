@@ -47,5 +47,13 @@ public class ApplicationClass extends Application {
         return password;
     }
 
+   public static void setRememberMe(Boolean switchState) {
+        editor.putBoolean("keyswitch", switchState);
+        editor.commit();
+   }
+    public static Boolean getRememberMe() {
+        Boolean switchState = sharedPreferences.getBoolean("keyswitch",false);
+        return switchState;
+    }
 }
 
