@@ -28,17 +28,21 @@ public class DynamicFragmntsActivity extends AppCompatActivity {
     }
 
     private void setAdapter() {
-        viewPager.setOffscreenPageLimit(2);
+
         dynamicAdapter = new DynamicAdapter(getSupportFragmentManager(), 3);
         viewPager.setAdapter(dynamicAdapter);
-        tabLayout.setupWithViewPager(viewPager);
-        setupTabNames();
+
+        tabLayout.setupWithViewPager(viewPager);  //Attach TabLayout with viewpager
+
+        viewPager.setOffscreenPageLimit(2);
+
+        setupTabNames(3);  //Set
 
     }
 
-    private void setupTabNames() {
-        tabLayout.getTabAt(0).setText("Fragment1");
-        tabLayout.getTabAt(1).setText("Fragment2");
-        tabLayout.getTabAt(2).setText("Fragment3");
+    private void setupTabNames(int number) {
+        for (int i = 0; i < number; i++) {
+            tabLayout.getTabAt(i).setText("Fragment" + i);
+        }
     }
 }
