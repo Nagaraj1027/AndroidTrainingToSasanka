@@ -9,7 +9,7 @@ import com.example.androidtrainingtosasanka.dynamicfragments.FragmentSecond;
 import com.example.androidtrainingtosasanka.dynamicfragments.FragmentThird;
 
 /**
- * Created by npambhala on 8/2/2017.
+ * Created by npambhala on 25/1/2019.
  */
 
 public class DynamicAdapter extends FragmentStatePagerAdapter {
