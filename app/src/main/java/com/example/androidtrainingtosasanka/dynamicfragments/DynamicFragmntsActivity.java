@@ -14,6 +14,7 @@ public class DynamicFragmntsActivity extends AppCompatActivity {
 
     DynamicAdapter dynamicAdapter;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

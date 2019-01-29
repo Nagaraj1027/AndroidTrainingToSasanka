@@ -3,7 +3,7 @@
     package="com.example.androidtrainingtosasanka">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name=".appclass.ApplicationClass"
@@ -13,7 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".staticfragments.StaticFragmentsActivity"></activity>
+        <activity android:name=".listview.ListviewActivity"></activity>
+        <activity android:name=".staticfragments.StaticFragmentsActivity" />
         <activity android:name=".intent.ExplicitIntentActivity" />
         <activity android:name=".activitylifecycle.SecondActivity" />
         <activity android:name=".activitylifecycle.FirstActivity" />
@@ -22,6 +23,7 @@
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

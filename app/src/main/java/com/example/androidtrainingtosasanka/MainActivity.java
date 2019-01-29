@@ -17,12 +17,13 @@ import com.example.androidtrainingtosasanka.appclass.AppConstants;
 import com.example.androidtrainingtosasanka.appclass.ApplicationClass;
 import com.example.androidtrainingtosasanka.dynamicfragments.DynamicFragmntsActivity;
 import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
+import com.example.androidtrainingtosasanka.listview.ListviewActivity;
 import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     EditText text1;
-    Button btn1, btn2, btn3, btn4, btn5;
+    Button btn1, btn2, btn3, btn4, btn5, btn6;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,12 +39,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn3 = (Button) findViewById(R.id.btn3);
         btn4 = (Button) findViewById(R.id.btn4);
         btn5 = (Button) findViewById(R.id.btn5);
+        btn6 = (Button) findViewById(R.id.btn6);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
         btn3.setOnClickListener(this);
         btn4.setOnClickListener(this);
         btn5.setOnClickListener(this);
+        btn6.setOnClickListener(this);
     }
 
     void gotoActivityLifeCycle() {
@@ -74,6 +77,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(to_dynamicFragments);
     }
 
+    void gotolistViewExample() {
+        Intent to_listViewExample = new Intent(MainActivity.this, ListviewActivity.class);
+        startActivity(to_listViewExample);
+    }
 
     @Override
     public void onClick(View v) {
@@ -97,6 +104,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn5:
                 gotoDynamicFragments();
+                break;
+
+            case R.id.btn6:
+                gotolistViewExample();
                 break;
         }
     }
