@@ -29,11 +29,12 @@ public class ListviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_listview);
 
         listView = (ListView) findViewById(R.id.listView);
+
         al_users = new ArrayList<>();
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 30; i++) {
             User user = new User();
-            user.setName("Android");
+            user.setName("Android" + i + "");
             user.setDOB("2009");
             al_users.add(user);
         }
@@ -78,8 +79,9 @@ public class ListviewActivity extends AppCompatActivity {
         }
 
         @Override
-        public int getCount() {
-            return 5;
+        public int getCount()
+        {
+            return al_users.size();
         }
     }
 
@@ -93,5 +95,4 @@ public class ListviewActivity extends AppCompatActivity {
             tv = (TextView) view.findViewById(R.id.tv);
         }
     }
-
 }

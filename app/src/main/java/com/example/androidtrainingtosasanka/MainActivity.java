@@ -18,12 +18,13 @@ import com.example.androidtrainingtosasanka.appclass.ApplicationClass;
 import com.example.androidtrainingtosasanka.dynamicfragments.DynamicFragmntsActivity;
 import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
 import com.example.androidtrainingtosasanka.listview.ListviewActivity;
+import com.example.androidtrainingtosasanka.recyclerview.RecyclerViewExample;
 import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     EditText text1;
-    Button btn1, btn2, btn3, btn4, btn5, btn6;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,6 +41,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn4 = (Button) findViewById(R.id.btn4);
         btn5 = (Button) findViewById(R.id.btn5);
         btn6 = (Button) findViewById(R.id.btn6);
+        btn7 = (Button) findViewById(R.id.btn7);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -47,6 +49,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn4.setOnClickListener(this);
         btn5.setOnClickListener(this);
         btn6.setOnClickListener(this);
+        btn7.setOnClickListener(this);
     }
 
     void gotoActivityLifeCycle() {
@@ -82,6 +85,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(to_listViewExample);
     }
 
+    void gotoRecyclerViewExample() {
+        Intent to_recyclerViewExample = new Intent(MainActivity.this, RecyclerViewExample.class);
+        startActivity(to_recyclerViewExample);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -108,6 +116,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn6:
                 gotolistViewExample();
+                break;
+            case R.id.btn7:
+                gotoRecyclerViewExample();
                 break;
         }
     }
