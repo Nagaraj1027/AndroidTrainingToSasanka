@@ -17,15 +17,20 @@ import com.example.androidtrainingtosasanka.appclass.AppConstants;
 import com.example.androidtrainingtosasanka.appclass.ApplicationClass;
 import com.example.androidtrainingtosasanka.database.DataActivity;
 import com.example.androidtrainingtosasanka.dynamicfragments.DynamicFragmntsActivity;
+import com.example.androidtrainingtosasanka.imageprocessing.ImageActivity;
+import com.example.androidtrainingtosasanka.imageprocessing.ImageCaptureAndPickActivity;
+import com.example.androidtrainingtosasanka.imageprocessing.SimpleImageActivity2;
 import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
 import com.example.androidtrainingtosasanka.listview.ListviewActivity;
 import com.example.androidtrainingtosasanka.recyclerview.RecyclerViewExample;
+import com.example.androidtrainingtosasanka.sensors.AccelerometerSensorActivity;
+import com.example.androidtrainingtosasanka.sensors.ProximitySensorActivity;
 import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     EditText text1;
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7,btn8;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +49,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn6 = (Button) findViewById(R.id.btn6);
         btn7 = (Button) findViewById(R.id.btn7);
         btn8 = (Button) findViewById(R.id.btn8);
+        btn9 = (Button) findViewById(R.id.btn9);
+        btn10 = (Button) findViewById(R.id.btn10);
+        btn11 = (Button) findViewById(R.id.btn11);
 
 
         btn1.setOnClickListener(this);
@@ -54,6 +62,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn6.setOnClickListener(this);
         btn7.setOnClickListener(this);
         btn8.setOnClickListener(this);
+        btn9.setOnClickListener(this);
+        btn10.setOnClickListener(this);
+        btn11.setOnClickListener(this);
     }
 
     void gotoActivityLifeCycle() {
@@ -95,7 +106,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void gotoDbExample() {
-        Intent to_DbActivity = new Intent(MainActivity.this,  DataActivity.class);
+        Intent to_DbActivity = new Intent(MainActivity.this, DataActivity.class);
+        startActivity(to_DbActivity);
+    }
+
+    void gotoImageProcessing() {
+        Intent to_DbActivity = new Intent(MainActivity.this, SimpleImageActivity2.class);
+        startActivity(to_DbActivity);
+    }
+
+    void gotoAccelerometerSensor() {
+        Intent to_DbActivity = new Intent(MainActivity.this, AccelerometerSensorActivity.class);
+        startActivity(to_DbActivity);
+    }
+
+    void gotoProximitySensor() {
+        Intent to_DbActivity = new Intent(MainActivity.this, ProximitySensorActivity.class);
         startActivity(to_DbActivity);
     }
 
@@ -132,6 +158,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn8:
                 gotoDbExample();
+                break;
+            case R.id.btn9:
+                gotoImageProcessing();
+                break;
+            case R.id.btn10:
+                gotoAccelerometerSensor();
+                break;
+            case R.id.btn11:
+                gotoProximitySensor();
                 break;
         }
     }

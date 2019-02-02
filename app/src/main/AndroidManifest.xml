@@ -4,6 +4,10 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".appclass.ApplicationClass"
@@ -13,7 +17,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".listview.ListviewActivity"/>
+        <activity android:name=".imageprocessing.ImageActivity"/>
+        <activity android:name=".listview.ListviewActivity" />
         <activity android:name=".staticfragments.StaticFragmentsActivity" />
         <activity android:name=".intent.ExplicitIntentActivity" />
         <activity android:name=".activitylifecycle.SecondActivity" />
@@ -25,7 +30,8 @@
         <activity android:name=".database.DisplayData" />
         <activity android:name=".sensors.ProximitySensorActivity" />
         <activity android:name=".sensors.AccelerometerSensorActivity" />
-
+        <activity android:name=".imageprocessing.SimpleImageActivity2" />
+        <activity android:name=".imageprocessing.ImageCaptureAndPickActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

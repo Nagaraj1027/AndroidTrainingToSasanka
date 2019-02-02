@@ -55,5 +55,14 @@ public class ApplicationClass extends Application {
         Boolean switchState = sharedPreferences.getBoolean("keyswitch",false);
         return switchState;
     }
+
+    public static void insertIntoPrefernces(String key, String name) {
+        editor.putString(key, name);
+        editor.commit();
+    }
+
+    public static String retrieveFromPrefernces(String keyname) {
+        return sharedPreferences.getString(keyname, "");
+    }
 }
 

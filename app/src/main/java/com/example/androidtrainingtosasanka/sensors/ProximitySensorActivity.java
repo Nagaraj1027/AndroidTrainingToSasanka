@@ -45,13 +45,14 @@ public class ProximitySensorActivity extends AppCompatActivity implements Sensor
         iv = (ImageView) findViewById(R.id.imageView1);
     }
 
+    @Override
     protected void onResume() {
         super.onResume();
-
         mSensorManager.registerListener(this, mSensor,
                 SensorManager.SENSOR_DELAY_NORMAL);
     }
 
+    @Override
     protected void onPause() {
         super.onPause();
         mSensorManager.unregisterListener(this);
@@ -60,6 +61,7 @@ public class ProximitySensorActivity extends AppCompatActivity implements Sensor
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
     }
 
+    @Override
     public void onSensorChanged(SensorEvent event) {
         if (event.values[0] == 0) {
             iv.setImageResource(R.drawable.done);

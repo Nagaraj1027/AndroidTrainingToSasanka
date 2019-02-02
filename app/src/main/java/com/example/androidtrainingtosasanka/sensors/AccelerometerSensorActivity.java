@@ -48,6 +48,7 @@ public class AccelerometerSensorActivity extends AppCompatActivity implements Se
 
             accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
             sensorManager.registerListener(this, accelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+
             vibrateThreshold = accelerometer.getMaximumRange() /5;
             Log.e("vibrateThreshold", vibrateThreshold + "");
 
@@ -69,6 +70,7 @@ public class AccelerometerSensorActivity extends AppCompatActivity implements Se
         if (toolbar != null) {
             toolbar.setTitle("Accelerometer Sensor");
         }
+
 
         currentX = (TextView) findViewById(R.id.currentX);
         currentY = (TextView) findViewById(R.id.currentY);
@@ -118,7 +120,7 @@ public class AccelerometerSensorActivity extends AppCompatActivity implements Se
 
         if ((deltaZ > vibrateThreshold) || (deltaY > vibrateThreshold) || (deltaX > vibrateThreshold)) {
             Log.e("vibrate acelromter", "vibrate accelerometer");
-           // v.vibrate(50);
+            v.vibrate(50);
         }
     }
 
