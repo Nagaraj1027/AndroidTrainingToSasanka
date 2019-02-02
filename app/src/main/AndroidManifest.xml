@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".listview.ListviewActivity"></activity>
+        <activity android:name=".listview.ListviewActivity"/>
         <activity android:name=".staticfragments.StaticFragmentsActivity" />
         <activity android:name=".intent.ExplicitIntentActivity" />
         <activity android:name=".activitylifecycle.SecondActivity" />
@@ -21,6 +21,11 @@
         <activity android:name=".MainActivity" />
         <activity android:name=".dynamicfragments.DynamicFragmntsActivity" />
         <activity android:name=".recyclerview.RecyclerViewExample" />
+        <activity android:name=".database.DataActivity" />
+        <activity android:name=".database.DisplayData" />
+        <activity android:name=".sensors.ProximitySensorActivity" />
+        <activity android:name=".sensors.AccelerometerSensorActivity" />
+
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

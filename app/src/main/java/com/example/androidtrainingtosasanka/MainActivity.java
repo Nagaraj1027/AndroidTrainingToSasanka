@@ -15,6 +15,7 @@ import android.widget.ListView;
 import com.example.androidtrainingtosasanka.activitylifecycle.FirstActivity;
 import com.example.androidtrainingtosasanka.appclass.AppConstants;
 import com.example.androidtrainingtosasanka.appclass.ApplicationClass;
+import com.example.androidtrainingtosasanka.database.DataActivity;
 import com.example.androidtrainingtosasanka.dynamicfragments.DynamicFragmntsActivity;
 import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
 import com.example.androidtrainingtosasanka.listview.ListviewActivity;
@@ -24,7 +25,7 @@ import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActiv
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     EditText text1;
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7,btn8;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn5 = (Button) findViewById(R.id.btn5);
         btn6 = (Button) findViewById(R.id.btn6);
         btn7 = (Button) findViewById(R.id.btn7);
+        btn8 = (Button) findViewById(R.id.btn8);
+
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -50,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn5.setOnClickListener(this);
         btn6.setOnClickListener(this);
         btn7.setOnClickListener(this);
+        btn8.setOnClickListener(this);
     }
 
     void gotoActivityLifeCycle() {
@@ -90,6 +94,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(to_recyclerViewExample);
     }
 
+    void gotoDbExample() {
+        Intent to_DbActivity = new Intent(MainActivity.this,  DataActivity.class);
+        startActivity(to_DbActivity);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -119,6 +128,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn7:
                 gotoRecyclerViewExample();
+                break;
+
+            case R.id.btn8:
+                gotoDbExample();
                 break;
         }
     }
