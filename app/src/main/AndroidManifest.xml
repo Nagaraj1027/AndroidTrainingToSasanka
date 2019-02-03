@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.androidtrainingtosasanka">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -16,8 +17,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".imageprocessing.ImageActivity"/>
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".JSonActivity"></activity>
+        <activity android:name=".imageprocessing.ImageActivity" />
         <activity android:name=".listview.ListviewActivity" />
         <activity android:name=".staticfragments.StaticFragmentsActivity" />
         <activity android:name=".intent.ExplicitIntentActivity" />
@@ -32,6 +35,7 @@
         <activity android:name=".sensors.AccelerometerSensorActivity" />
         <activity android:name=".imageprocessing.SimpleImageActivity2" />
         <activity android:name=".imageprocessing.ImageCaptureAndPickActivity" />
+        <activity android:name=".notificationsFcm.NotificationActivity" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -39,6 +43,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service android:name=".notificationsFcm.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service> <!-- [END firebase_service] -->
+        <!-- [START firebase_iid_service] -->
+        <service android:name=".notificationsFcm.MyFirebaseInstanceIDService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
     </application>
 
 </manifest>

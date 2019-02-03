@@ -22,6 +22,7 @@ import com.example.androidtrainingtosasanka.imageprocessing.ImageCaptureAndPickA
 import com.example.androidtrainingtosasanka.imageprocessing.SimpleImageActivity2;
 import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
 import com.example.androidtrainingtosasanka.listview.ListviewActivity;
+import com.example.androidtrainingtosasanka.notificationsFcm.NotificationActivity;
 import com.example.androidtrainingtosasanka.recyclerview.RecyclerViewExample;
 import com.example.androidtrainingtosasanka.sensors.AccelerometerSensorActivity;
 import com.example.androidtrainingtosasanka.sensors.ProximitySensorActivity;
@@ -30,7 +31,7 @@ import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActiv
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     EditText text1;
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11,btn12;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,7 +53,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn9 = (Button) findViewById(R.id.btn9);
         btn10 = (Button) findViewById(R.id.btn10);
         btn11 = (Button) findViewById(R.id.btn11);
-
+        btn12 = (Button) findViewById(R.id.btn12);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -65,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn9.setOnClickListener(this);
         btn10.setOnClickListener(this);
         btn11.setOnClickListener(this);
+        btn12.setOnClickListener(this);
     }
 
     void gotoActivityLifeCycle() {
@@ -125,6 +127,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(to_DbActivity);
     }
 
+     void gotoNotification() {
+        Intent to_explicitAct = new Intent(MainActivity.this, NotificationActivity.class);
+        startActivity(to_explicitAct);
+        //finish();
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -168,6 +176,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn11:
                 gotoProximitySensor();
                 break;
+            case R.id.btn12:
+                gotoNotification();
+                break;
+
+
         }
     }
 }

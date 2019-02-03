@@ -141,6 +141,17 @@
                 android:text="GOTO PROXIMITY SENSOR "
                 android:textColor="#ffffff" />
 
+            <Button
+                android:id="@+id/btn12"
+                style="@style/btn_stye"
+                android:layout_below="@+id/btn11"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="30dp"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"
+                android:text="GOTO FCM NOTIFICATIONS "
+                android:textColor="#ffffff" />
+
             <!--<Button
                 android:id="@+id/btnCall"
                 style="@style/btn_stye"
