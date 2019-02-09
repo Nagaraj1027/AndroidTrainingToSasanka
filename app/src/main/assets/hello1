@@ -1,0 +1,32 @@
+{
+    "locations": [
+    {
+      "city": "Hyderabad",
+      "country": "India"
+    },
+    {
+      "city": "London",
+      "country": "Uk"
+    },
+    {
+      "city": "Sydney",
+      "country": "Australia"
+    },
+    {
+      "city": "Bali",
+      "country": "Indonesia"
+    },
+    {
+      "city": "Oval",
+      "country": "Newzeland"
+    },
+    {
+      "city": "Texas",
+      "country": "USA"
+    },
+    {
+      "city": "Banglore",
+      "country": "India"
+    }
+  ]
+}

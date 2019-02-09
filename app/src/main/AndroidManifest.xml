@@ -19,7 +19,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".JSonActivity"></activity>
+        <activity android:name=".jsonparser.JSonActivity"/>
         <activity android:name=".imageprocessing.ImageActivity" />
         <activity android:name=".listview.ListviewActivity" />
         <activity android:name=".staticfragments.StaticFragmentsActivity" />

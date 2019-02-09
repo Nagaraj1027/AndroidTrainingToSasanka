@@ -1,5 +1,6 @@
 package com.example.androidtrainingtosasanka.recyclerview;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
@@ -16,14 +17,19 @@ import android.support.v7.widget.Toolbar;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
+import com.example.androidtrainingtosasanka.MainActivity;
 import com.example.androidtrainingtosasanka.R;
+import com.example.androidtrainingtosasanka.activitylifecycle.FirstActivity;
 import com.example.androidtrainingtosasanka.model.ListviewModelClass;
 
 import java.util.ArrayList;
@@ -32,6 +38,7 @@ import java.util.Collections;
 public class RecyclerViewExample extends AppCompatActivity {
     Toolbar toolbar;
     RecyclerView rv;
+    ImageView img;
 
     ArrayList<ListviewModelClass> al;
     DataAdapterRecyclerview rv_adapter;
@@ -51,14 +58,44 @@ public class RecyclerViewExample extends AppCompatActivity {
     }
 
     public void findViews() {
-        /*toolbar = (Toolbar) findViewById(R.id.toolbar);
+      /*  toolbar = (Toolbar) findViewById(R.id.toolbar);
+        img = (ImageView) findViewById(R.id.img);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setTitle("Recyclerview Example");
-*/
+
+        img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "Toolbar image clicked", Toast.LENGTH_LONG).show();
+            }
+        });*/
+
         rv = (RecyclerView) findViewById(R.id.rv);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return super.onCreateOptionsMenu(menu);
+
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                Toast.makeText(getApplicationContext(), "Toolbar back btn click", Toast.LENGTH_LONG).show();
+                gotoActivityLifeCycle();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    void gotoActivityLifeCycle() {
+        Intent to_first = new Intent(RecyclerViewExample.this, MainActivity.class);
+        startActivity(to_first);
+    }
 
     public void createList() {
         al = new ArrayList<>();

@@ -2,8 +2,6 @@ package com.example.androidtrainingtosasanka;
 
 import android.content.Intent;
 import android.net.Uri;
-import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,13 +12,11 @@ import android.widget.ListView;
 
 import com.example.androidtrainingtosasanka.activitylifecycle.FirstActivity;
 import com.example.androidtrainingtosasanka.appclass.AppConstants;
-import com.example.androidtrainingtosasanka.appclass.ApplicationClass;
 import com.example.androidtrainingtosasanka.database.DataActivity;
 import com.example.androidtrainingtosasanka.dynamicfragments.DynamicFragmntsActivity;
-import com.example.androidtrainingtosasanka.imageprocessing.ImageActivity;
-import com.example.androidtrainingtosasanka.imageprocessing.ImageCaptureAndPickActivity;
 import com.example.androidtrainingtosasanka.imageprocessing.SimpleImageActivity2;
 import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
+import com.example.androidtrainingtosasanka.jsonparser.JSonActivity;
 import com.example.androidtrainingtosasanka.listview.ListviewActivity;
 import com.example.androidtrainingtosasanka.notificationsFcm.NotificationActivity;
 import com.example.androidtrainingtosasanka.recyclerview.RecyclerViewExample;
@@ -31,7 +27,7 @@ import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActiv
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     EditText text1;
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11,btn12;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12,btn13;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn10 = (Button) findViewById(R.id.btn10);
         btn11 = (Button) findViewById(R.id.btn11);
         btn12 = (Button) findViewById(R.id.btn12);
+        btn13 = (Button) findViewById(R.id.btn13);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -67,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn10.setOnClickListener(this);
         btn11.setOnClickListener(this);
         btn12.setOnClickListener(this);
+        btn13.setOnClickListener(this);
     }
 
     void gotoActivityLifeCycle() {
@@ -127,8 +125,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         startActivity(to_DbActivity);
     }
 
-     void gotoNotification() {
+    void gotoNotification() {
         Intent to_explicitAct = new Intent(MainActivity.this, NotificationActivity.class);
+        startActivity(to_explicitAct);
+        //finish();
+    }
+
+    void gotoReadJson() {
+        Intent to_explicitAct = new Intent(MainActivity.this, JSonActivity.class);
         startActivity(to_explicitAct);
         //finish();
     }
@@ -178,6 +182,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.btn12:
                 gotoNotification();
+                break;
+            case R.id.btn13:
+                gotoReadJson();
                 break;
 
 
