@@ -23,11 +23,12 @@ import com.example.androidtrainingtosasanka.recyclerview.RecyclerViewExample;
 import com.example.androidtrainingtosasanka.sensors.AccelerometerSensorActivity;
 import com.example.androidtrainingtosasanka.sensors.ProximitySensorActivity;
 import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActivity;
+import com.example.androidtrainingtosasanka.volleyserevercalls.VollleyExample2;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     EditText text1;
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12,btn13;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn11 = (Button) findViewById(R.id.btn11);
         btn12 = (Button) findViewById(R.id.btn12);
         btn13 = (Button) findViewById(R.id.btn13);
+        btn14 = (Button) findViewById(R.id.btn14);
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -65,6 +67,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn11.setOnClickListener(this);
         btn12.setOnClickListener(this);
         btn13.setOnClickListener(this);
+        btn14.setOnClickListener(this);
     }
 
     void gotoActivityLifeCycle() {
@@ -137,6 +140,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //finish();
     }
 
+    void gotoVolleyExample() {
+        Intent to_explicitAct = new Intent(MainActivity.this, VollleyExample2.class);
+        startActivity(to_explicitAct);
+        //finish();
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -187,6 +196,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 gotoReadJson();
                 break;
 
+            case R.id.btn14:
+                gotoVolleyExample();
+                break;
 
         }
     }

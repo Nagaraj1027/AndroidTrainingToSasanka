@@ -6,7 +6,9 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
+
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
@@ -19,7 +21,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".jsonparser.JSonActivity"/>
+        <activity android:name=".jsonparser.JSonActivity" />
         <activity android:name=".imageprocessing.ImageActivity" />
         <activity android:name=".listview.ListviewActivity" />
         <activity android:name=".staticfragments.StaticFragmentsActivity" />
@@ -36,6 +38,9 @@
         <activity android:name=".imageprocessing.SimpleImageActivity2" />
         <activity android:name=".imageprocessing.ImageCaptureAndPickActivity" />
         <activity android:name=".notificationsFcm.NotificationActivity" />
+        <activity android:name=".volleyserevercalls.VollleyExample2" />
+        <activity android:name=".volleyserevercalls.VollleyExample1" />
+        <activity android:name=".volleyserevercalls.VolleyServiceExample" />
         <activity android:name=".login.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
