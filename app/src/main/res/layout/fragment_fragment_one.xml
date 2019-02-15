@@ -11,9 +11,9 @@
         android:text="fragment1"
         android:textSize="30sp" />
 
-    <ListView
+   <!-- <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content" />-->
 
 </FrameLayout>

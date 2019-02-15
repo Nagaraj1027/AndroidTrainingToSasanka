@@ -34,8 +34,8 @@ public class FragmentOne extends Fragment {
      * @return A new instance of fragment FragmentSecond.
      */
     // TODO: Rename and change types and number of parameters
-    public static FragmentSecond newInstance(String param1, String param2) {
-        FragmentSecond fragment = new FragmentSecond();
+    public static FragmentOne newInstance(String param1, String param2) {
+        FragmentOne fragment = new FragmentOne();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
