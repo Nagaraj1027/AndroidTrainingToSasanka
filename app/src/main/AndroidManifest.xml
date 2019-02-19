@@ -21,6 +21,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".intentservice.IntentServiceActivity" />
+        <activity android:name=".service.ServiceActivity" />
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".jsonparser.JSonActivity" />
         <activity android:name=".imageprocessing.ImageActivity" />
         <activity android:name=".listview.ListviewActivity" />
@@ -41,7 +44,9 @@
         <activity android:name=".volleyserevercalls.VollleyExample2" />
         <activity android:name=".volleyserevercalls.VollleyExample1" />
         <activity android:name=".volleyserevercalls.VolleyServiceExample" />
-        <activity android:name=".login.LoginActivity">
+        <activity android:name=".galleryimages.Gallery" />
+        <activity android:name=".galleryimages.PhotosActivity" />
+        <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -60,6 +65,15 @@
                 <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
+
+        <service
+            android:name=".intentservice.TimeCountService"
+            android:exported="false" />
+        <service
+            android:name=".service.ServiceTimeCount"
+            android:exported="false" />
+
+        <receiver android:name=".intentservice.MyIntentReceiver"/>
 
     </application>
 

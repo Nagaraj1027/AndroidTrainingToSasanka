@@ -30,11 +30,11 @@ public class LoginActivity extends AppCompatActivity {
         switch1 =  (Switch) findViewById(R.id.switch1);
 
 
-        if (ApplicationClass.getRememberMe()){
+       /* if (ApplicationClass.getRememberMe()){
             gotoMainActivity();
         }
 
-        else {
+        else {*/
             btnLogin.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
             });
         }
 
-    }
+   // }
 
 
     void gotoMainActivity() {

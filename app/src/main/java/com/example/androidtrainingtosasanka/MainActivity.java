@@ -14,26 +14,29 @@ import com.example.androidtrainingtosasanka.activitylifecycle.FirstActivity;
 import com.example.androidtrainingtosasanka.appclass.AppConstants;
 import com.example.androidtrainingtosasanka.database.DataActivity;
 import com.example.androidtrainingtosasanka.dynamicfragments.DynamicFragmntsActivity;
+import com.example.androidtrainingtosasanka.galleryimages.Gallery;
 import com.example.androidtrainingtosasanka.imageprocessing.SimpleImageActivity2;
 import com.example.androidtrainingtosasanka.intent.ExplicitIntentActivity;
+import com.example.androidtrainingtosasanka.intentservice.IntentServiceActivity;
 import com.example.androidtrainingtosasanka.jsonparser.JSonActivity;
 import com.example.androidtrainingtosasanka.listview.ListviewActivity;
 import com.example.androidtrainingtosasanka.notificationsFcm.NotificationActivity;
 import com.example.androidtrainingtosasanka.recyclerview.RecyclerViewExample;
 import com.example.androidtrainingtosasanka.sensors.AccelerometerSensorActivity;
 import com.example.androidtrainingtosasanka.sensors.ProximitySensorActivity;
+import com.example.androidtrainingtosasanka.service.ServiceActivity;
 import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActivity;
 import com.example.androidtrainingtosasanka.volleyserevercalls.VollleyExample2;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;
     EditText text1;
-    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14;
+    Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn10, btn11, btn12, btn13, btn14, btn15, btn16, btn17;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.relative_layout);
-        Log.e("onCreate MainActivity", "onCreate MainActivity");
+        Log.e("onCreate Gallery", "onCreate Gallery");
 
         findViews();
     }
@@ -53,6 +56,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn12 = (Button) findViewById(R.id.btn12);
         btn13 = (Button) findViewById(R.id.btn13);
         btn14 = (Button) findViewById(R.id.btn14);
+        btn15 = (Button) findViewById(R.id.btn15);
+        btn16 = (Button) findViewById(R.id.btn16);
+        btn17 = (Button) findViewById(R.id.btn17);
+
 
         btn1.setOnClickListener(this);
         btn2.setOnClickListener(this);
@@ -68,6 +75,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn12.setOnClickListener(this);
         btn13.setOnClickListener(this);
         btn14.setOnClickListener(this);
+        btn15.setOnClickListener(this);
+        btn16.setOnClickListener(this);
+        btn17.setOnClickListener(this);
     }
 
     void gotoActivityLifeCycle() {
@@ -146,6 +156,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         //finish();
     }
 
+    void gotoShowGalleryImages() {
+        Intent to_explicitAct = new Intent(MainActivity.this, Gallery.class);
+        startActivity(to_explicitAct);
+        //finish();
+    }
+
+    void gotoIntentService() {
+        Intent to_explicitAct = new Intent(MainActivity.this, IntentServiceActivity.class);
+        startActivity(to_explicitAct);
+    }
+
+    void gotoService() {
+        Intent to_explicitAct = new Intent(MainActivity.this, ServiceActivity.class);
+        startActivity(to_explicitAct);
+    }
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -198,6 +224,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.btn14:
                 gotoVolleyExample();
+                break;
+            case R.id.btn15:
+                gotoShowGalleryImages();
+                break;
+            case R.id.btn16:
+                gotoIntentService();
+                break;
+
+            case R.id.btn17:
+                gotoService();
                 break;
 
         }
