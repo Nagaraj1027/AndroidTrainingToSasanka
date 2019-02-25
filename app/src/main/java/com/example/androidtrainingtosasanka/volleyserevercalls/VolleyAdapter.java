@@ -6,10 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
 import com.example.androidtrainingtosasanka.R;
+import com.example.androidtrainingtosasanka.model.Volley_pojo1;
 
 import java.util.ArrayList;
 
@@ -20,9 +22,9 @@ import java.util.ArrayList;
 public class VolleyAdapter extends BaseAdapter {
 
     private Activity context;
-    private ArrayList<VollleyExample2.DetailsPojo> al;
+    private ArrayList<Volley_pojo1> al;
 
-    public VolleyAdapter(Activity context, ArrayList<VollleyExample2.DetailsPojo> al) {
+    public VolleyAdapter(Activity context, ArrayList<Volley_pojo1> al) {
         super();
         this.context = context;
         this.al = al;
@@ -51,18 +53,15 @@ public class VolleyAdapter extends BaseAdapter {
         Log.d("al.size()", al.size() + "");
 
         TextView textViewId = (TextView) listViewItem.findViewById(R.id.textViewId);
-        TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewName);
-        TextView textViewEmail = (TextView) listViewItem.findViewById(R.id.textViewEmail);
-        TextView userimage = (TextView) listViewItem.findViewById(R.id.userimage);
-        TextView textViewcountryname = (TextView) listViewItem.findViewById(R.id.textViewcountryname);
+        TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewFirstName);
+        TextView textViewEmail = (TextView) listViewItem.findViewById(R.id.textViewLastName);
+        ImageView userImage = (ImageView) listViewItem.findViewById(R.id.userimage);
 
-        textViewId.setText(al.get(position).getUserID());
-        textViewName.setText(al.get(position).getUserName());
-        textViewEmail.setText(al.get(position).getEmail());
-        userimage.setText(al.get(position).getUserImage());
-        textViewcountryname.setText(al.get(position).getCountryName());
-        textViewcountryname.setText(al.get(position).getCountryName());
 
+        textViewId.setText(al.get(position).getId());
+        textViewName.setText(al.get(position).getFirst_name());
+        textViewEmail.setText(al.get(position).getLast_name());
+        //userimage.setText(al.get(position).getAvatar());
 
         return listViewItem;
     }

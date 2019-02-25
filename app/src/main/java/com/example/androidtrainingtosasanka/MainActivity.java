@@ -26,6 +26,7 @@ import com.example.androidtrainingtosasanka.sensors.AccelerometerSensorActivity;
 import com.example.androidtrainingtosasanka.sensors.ProximitySensorActivity;
 import com.example.androidtrainingtosasanka.service.ServiceActivity;
 import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActivity;
+import com.example.androidtrainingtosasanka.volleyserevercalls.VollleyExample1;
 import com.example.androidtrainingtosasanka.volleyserevercalls.VollleyExample2;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
@@ -151,7 +152,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void gotoVolleyExample() {
-        Intent to_explicitAct = new Intent(MainActivity.this, VollleyExample2.class);
+        Intent to_explicitAct = new Intent(MainActivity.this, VollleyExample1.class);
         startActivity(to_explicitAct);
         //finish();
     }

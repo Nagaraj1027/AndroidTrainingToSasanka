@@ -82,7 +82,7 @@ public class VollleyExample2 extends AppCompatActivity {
 
             Log.d("request", jsonObject.toString());
 
-            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST,
+            JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET,
                     AppConstants.retreiveprofiledata, jsonObject,
                     new Response.Listener<JSONObject>() {
                         @Override
@@ -122,8 +122,8 @@ public class VollleyExample2 extends AppCompatActivity {
                                             al.add(details);
                                         }
 
-                                        VolleyAdapter volleyAdapter = new VolleyAdapter(VollleyExample2.this, al);
-                                        lv.setAdapter(volleyAdapter);
+                                       /* VolleyAdapter volleyAdapter = new VolleyAdapter(VollleyExample2.this, al);
+                                        lv.setAdapter(volleyAdapter);*/
                                     }
                                 }
                                 pDialog.hide();

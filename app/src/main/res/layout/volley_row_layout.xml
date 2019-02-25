@@ -25,14 +25,14 @@
                 android:text="New Text" />
 
             <TextView
-                android:id="@+id/textViewName"
+                android:id="@+id/textViewFirstName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="New Text" />
 
             <TextView
-                android:id="@+id/textViewEmail"
+                android:id="@+id/textViewLastName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -47,20 +47,14 @@
             android:orientation="horizontal"
             android:weightSum="3">
 
-            <TextView
+            <ImageView
                 android:id="@+id/userimage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:src="@drawable/avatarupload"
                 android:layout_weight="1"
                 android:text="New Text" />
 
-            <TextView
-                android:id="@+id/textViewcountryname"
-                android:layout_width="wrap_content"
-
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="New Text" />
         </LinearLayout>
     </LinearLayout>
 
