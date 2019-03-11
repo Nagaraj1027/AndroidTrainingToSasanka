@@ -9,7 +9,7 @@
         android:id="@+id/buttonGet"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SEND Data" />
+        android:text="Retrieve Data from API Using Volley" />
 
     <ListView
         android:id="@+id/lv"

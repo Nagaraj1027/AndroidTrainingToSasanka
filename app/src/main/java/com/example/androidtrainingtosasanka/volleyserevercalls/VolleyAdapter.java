@@ -10,6 +10,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+
 import com.example.androidtrainingtosasanka.R;
 import com.example.androidtrainingtosasanka.model.Volley_pojo1;
 
@@ -53,15 +56,20 @@ public class VolleyAdapter extends BaseAdapter {
         Log.d("al.size()", al.size() + "");
 
         TextView textViewId = (TextView) listViewItem.findViewById(R.id.textViewId);
-        TextView textViewName = (TextView) listViewItem.findViewById(R.id.textViewFirstName);
-        TextView textViewEmail = (TextView) listViewItem.findViewById(R.id.textViewLastName);
-        ImageView userImage = (ImageView) listViewItem.findViewById(R.id.userimage);
-
+        TextView tvFirstName = (TextView) listViewItem.findViewById(R.id.tvFirstName);
+        TextView tyvLastName = (TextView) listViewItem.findViewById(R.id.tyvLastName);
+        ImageView img = (ImageView) listViewItem.findViewById(R.id.img);
 
         textViewId.setText(al.get(position).getId());
-        textViewName.setText(al.get(position).getFirst_name());
-        textViewEmail.setText(al.get(position).getLast_name());
-        //userimage.setText(al.get(position).getAvatar());
+        tvFirstName.setText(al.get(position).getFirst_name());
+        tyvLastName.setText(al.get(position).getLast_name());
+
+
+        Glide.with(context).load(al.get(position).getAvatar())
+                .diskCacheStrategy(DiskCacheStrategy.NONE)
+                .skipMemoryCache(true)
+                .into(img);
+
 
         return listViewItem;
     }

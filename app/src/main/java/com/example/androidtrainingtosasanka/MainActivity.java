@@ -27,7 +27,6 @@ import com.example.androidtrainingtosasanka.sensors.ProximitySensorActivity;
 import com.example.androidtrainingtosasanka.service.ServiceActivity;
 import com.example.androidtrainingtosasanka.staticfragments.StaticFragmentsActivity;
 import com.example.androidtrainingtosasanka.volleyserevercalls.VollleyExample1;
-import com.example.androidtrainingtosasanka.volleyserevercalls.VollleyExample2;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     ListView lv;

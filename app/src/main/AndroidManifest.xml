@@ -41,9 +41,7 @@
         <activity android:name=".imageprocessing.SimpleImageActivity2" />
         <activity android:name=".imageprocessing.ImageCaptureAndPickActivity" />
         <activity android:name=".notificationsFcm.NotificationActivity" />
-        <activity android:name=".volleyserevercalls.VollleyExample2" />
         <activity android:name=".volleyserevercalls.VollleyExample1" />
-        <activity android:name=".volleyserevercalls.VolleyServiceExample" />
         <activity android:name=".galleryimages.Gallery" />
         <activity android:name=".galleryimages.PhotosActivity" />
         <activity android:name=".SplashScreen">
